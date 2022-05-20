@@ -14,8 +14,12 @@ export class CategoryService {
   constructor(private http: HttpClient) { }
 
   //Se crea un método para obtener todas las categórias, que será un Observable y devolverá una LISTA de Categorías
-  public getAllCategories(): Observable<Category[]> {
-    const urlEndpoint: string = "http://localhost:8080/store/categories";
+  public getAllCategories(partialName?: string): Observable<Category[]> {
+
+    let urlEndpoint: string = "http://localhost:8080/store/categories";
+    if (partialName) {
+      urlEndpoint = urlEndpoint +"?partialName=" + partialName;
+    }
     return this.http.get<Category[]>(urlEndpoint);
   }
 

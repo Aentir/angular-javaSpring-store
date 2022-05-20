@@ -1,0 +1,19 @@
+form {
+    margin: 25px
+}
+
+form .form-group {
+    margin-top: 25px;
+}
+
+form label {
+    display: block;
+}
+
+form .ng-valid[required], .ng-valid.required {
+    border-left: 5px solid green;
+}
+
+form .ng-invalid:not(form) {
+    border-left: 5px solid red;
+}

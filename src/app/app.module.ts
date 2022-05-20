@@ -14,6 +14,9 @@ import { CategoryFormComponent } from './entities/category/category-form/categor
 import { ItemListComponent } from './entities/item/item-list/item-list.component';
 import { ItemFormComponent } from './entities/item/item-form/item-form.component';
 import { HttpRequestIntercept } from './config/interceptors/http-request-interceptor.interceptor';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+import {AutoCompleteModule} from 'primeng/autocomplete';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,9 @@ import { HttpRequestIntercept } from './config/interceptors/http-request-interce
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    AutoCompleteModule
   ],
   providers: [
     {
