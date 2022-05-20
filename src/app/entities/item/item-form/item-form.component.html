@@ -1,1 +1,45 @@
-<p>item-form works!</p>
+<h1>Ficha de art&iacute;culo</h1>
+{{itemId}} // {{mod}}
+
+<form *ngIf="item" #itemForm="ngForm" name="itemForm" role="form" novalidate autocomplete="off">
+
+    <!-- Id: solo visible si estamos en edición (pero no será editable) -->
+    <div class="form-group">
+        <label for="id">Id:</label>
+        <input type="number" [(ngModel)]="item.id" class="form-control" id="price" name="id" #price="ngModel">
+    </div>
+
+    <!-- Categoría Id -->
+    <div class="form-group">
+        <label for="categoryId">Categoria:</label>
+        <input type="number" [(ngModel)]="item.categoryId" class="form-control" id="category" name="category" #categoryId="ngModel">
+    </div>
+
+    <!-- Nombre -->
+    <div class="form-group">
+        <label for="name">Nombre:</label>
+        <input type="text" [(ngModel)]="item.name" class="form-control" id="name" name="name" #name="ngModel">
+    </div>
+
+    <!-- Descripción -->
+    <div class="form-group">
+        <label for="description">Descripci&oacute;n:</label>
+        <input type="text" [(ngModel)]="item.description" class="form-control" id="description" name="description" #description="ngModel">
+    </div>
+
+    <!-- Precio -->
+    <div class="form-group">
+        <label for="price">Precio:</label>
+        <input type="number" [(ngModel)]="item.price" class="form-control" id="price" name="price" #price="ngModel">
+    </div>
+
+    <!-- Imagen -->
+    <div class="form-group">
+        <label for="price">Imagen (base64):</label>
+        <input type="text" [(ngModel)]="item.image" class="form-control" id="image" name="image" #image="ngModel">
+    </div>
+
+    <div class="buttonsForm">
+        <button>Guardar</button>
+    </div>
+</form>

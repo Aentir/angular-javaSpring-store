@@ -7,7 +7,6 @@ import { Item } from '../model/item.model';
   providedIn: 'root'
 })
 export class ItemService {
-  
 
   //Se inyecta en el constructor el módulo HttpClient para poder hacer peticiones al backend
   constructor(private http: HttpClient) { }
@@ -29,5 +28,10 @@ export class ItemService {
   public deleteItem(itemToDlete: number): Observable<any> {
     let urlEndpoint: string = "http://localhost:8080/store/items/" + itemToDlete;
     return this.http.delete<any>(urlEndpoint);
+  }
+
+  public getItemById(itemId: number): Observable<Item> {
+    let urlEndpoint: string = "http://localhost:8080/store/items/" + itemId;
+    return this.http.get<Item>(urlEndpoint);
   }
 }
